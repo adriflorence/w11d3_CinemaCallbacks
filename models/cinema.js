@@ -24,4 +24,13 @@ Cinema.prototype.filmsByGenre = function (genre) {
   });
 };
 
+
+Cinema.prototype.filmsFromYear = function (year) {
+  return this.films.filter(function(film){
+    if(film.year === year) {
+      return film;
+    }
+  })
+};
+
 module.exports = Cinema;
