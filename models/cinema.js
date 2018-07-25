@@ -16,5 +16,12 @@ Cinema.prototype.findFilm = function(title){
   });
 };
 
+Cinema.prototype.filmsByGenre = function (genre) {
+  return this.films.filter(function(film) {
+    if(film.genre === genre) {
+      return film;
+    }
+  });
+};
 
 module.exports = Cinema;
