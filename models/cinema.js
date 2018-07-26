@@ -33,4 +33,30 @@ Cinema.prototype.filmsFromYear = function (year) {
   })
 };
 
+
+Cinema.prototype.overCertainLength = function (length) {
+  return this.films.every(function(film){
+    if(film.length > length) {
+      return film;
+    }
+  })
+};
+
+
+Cinema.prototype.totalRunningTime = function () {
+  return this.films.reduce(function(acc, film){
+    return acc + film.length;
+  }, 0) // If you use reduce, remember to pass in the initial value of the accumulator as the second argument.
+};
+
+
+Cinema.prototype.filmsByProperty = function(property, criteria){
+  return this.films.filter(function(film){
+    if (film[property] === criteria){
+      return film;
+    }
+  });
+}
+
+
 module.exports = Cinema;
